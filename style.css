@@ -247,6 +247,9 @@ header .title {
   border: 1px solid #afcfaf;
   float: left;
 }
+.container .day .slide-info .map-image:hover {
+  cursor: pointer;
+}
 @media only screen and (max-width: 650px) {
   .container .day .slide-info .map-image {
     margin: 0 auto;
