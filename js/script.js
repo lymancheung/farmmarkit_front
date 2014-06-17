@@ -2,25 +2,54 @@
 
 $(document).ready(function() {
 
+	var targetElement = $('.container');
 
-	var theList = $(".day");
-	var kids = theList.children(".slide-info");
+	var marketDays = $('.day');
+	var marketDay;
+
+	targetElement.html("");
+	var nextSevenDays = getNextSevenDays();
+
+	for (var dayIndex = 0; dayIndex < nextSevenDays.length; dayIndex++) {
+		
+
+		for(var i = 0; i < marketDays.length; i++) {
+			marketDay = $(marketDays[i]);
+			if(marketDay.hasClass(nextSevenDays[dayIndex])) {
+				targetElement.append(marketDay);
+				console.log(marketDay);
+				// $(".day:first-of-type h3").css("border-radius","30px 30px 0 0");
+			}
+		}
+	}
+
+	function getCurrentDayOfWeek () {
+		var today = new Date(Date.now());
+		return today.getDay();
+	}
+
+	function getNextSevenDays () {
+		var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+		var currentDayOfWeek = getCurrentDayOfWeek();
+		var daysBeforeToday = days.splice(0,currentDayOfWeek);
+		var nextSevenDays = $.merge(days, daysBeforeToday);
+		return nextSevenDays;
+	}
+
+	function borderIt () {
+		marketDay.css("background-color","red");
+	}
 
 	$('.weekday').click(function(){
-	// $('.slide-info').slideToggle();
-	$(this).siblings('.slide-info').slideToggle();
+		$(this).siblings('.slide-info').slideToggle();
 	});//weekday click
 
-
+	$(".day:first-of-type h3, .day:first-of-type").css("border-radius","30px 30px 0 0");
+	$(".day:last-of-type h3, .day:last-of-type").addClass('non-curly').click(function(){
+		$(this).toggleClass('non-curly');
+	});
 	
-	$('.day-7 h3').click(function(){
-	$(this).toggleClass('curly');
-	});//curly
-
-	if(kids.length > 5){
-		theList.children(":nth-of-type(n+6)").hide();
-		
-	}
+	
 
 	// (function(d, s, id) {
 	//   var js, fjs = d.getElementsByTagName(s)[0];

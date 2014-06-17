@@ -255,15 +255,6 @@ header .title {
     float: none;
   }
 }
-.container .day:first-of-type {
-  border-radius: 30px 30px 0 0;
-}
-.container .day:last-of-type {
-  border-radius: 0 0 30px 30px;
-}
-.container .day-1 h3 {
-  border-radius: 30px 30px 0 0;
-}
 
 .info-box {
   float: left;
@@ -291,12 +282,8 @@ header .title {
   }
 }
 
-.day-7 h3 {
+.non-curly {
   border-radius: 0px 0px 30px 30px;
-}
-
-.day-7 .weekday.curly {
-  border-radius: 0px 0px 0px 0px;
 }
 
 footer {
