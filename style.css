@@ -194,12 +194,13 @@ header {
   background-attachment: fixed;
   padding: 7% 0;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 header h1 {
   padding: 8%;
   text-transform: uppercase;
   color: white;
-  font-size: 4rem;
+  font-size: 7.5rem;
   margin: 0 0 3% 0;
 }
 header .title {
@@ -213,8 +214,9 @@ header .title {
 .container {
   border-radius: 30px;
   margin: 0 auto;
-  max-width: 600px;
-  margin: 3% auto 0 auto;
+  width: 90%;
+  max-width: 900px;
+  margin: 13% auto 20% auto;
 }
 .container .day {
   border: 1px solid rgba(241, 161, 40, 0.7);
@@ -226,8 +228,8 @@ header .title {
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 5%;
-  font-size: 3rem;
+  padding: 7% 5%;
+  font-size: 7rem;
   background-color: rgba(244, 182, 88, 0.7);
 }
 .container .day .weekday:hover {
@@ -240,49 +242,27 @@ header .title {
   padding: 10px;
   display: none;
 }
+.container .day .slide-info .info-box {
+  font-size: 3rem;
+}
 .container .day .slide-info .map-image {
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 1px solid #afcfaf;
-  float: left;
+  float: none;
+  margin: 0 auto 10px auto;
+  display: block;
 }
 .container .day .slide-info .map-image:hover {
   cursor: pointer;
 }
-@media only screen and (max-width: 650px) {
-  .container .day .slide-info .map-image {
-    margin: 0 auto;
-    margin-bottom: 10px;
-    display: block;
-    float: none;
-  }
-}
 
 .info-box {
-  float: left;
-  margin-left: 7%;
-}
-@media only screen and (max-width: 650px) {
-  .info-box {
-    float: none;
-    margin: 0 auto;
-    display: inline;
-    text-align: center;
-  }
-}
-.info-box p {
-  line-height: 1;
-  font-size: 1.4rem;
-}
-.info-box h4 {
-  font-size: 1.2rem;
-  margin-top: 0;
-}
-@media only screen and (max-width: 650px) {
-  .info-box h4 {
-    clear: both;
-  }
+  float: none;
+  margin: 0 auto;
+  display: inline;
+  text-align: center;
 }
 
 .non-curly {
@@ -293,7 +273,7 @@ footer {
   background-color: darkseagreen;
   width: 100%;
   margin-top: 6%;
-  padding: 5px;
+  padding: 10%;
   border-top: 2px solid #86ad86;
 }
 footer .icons {
