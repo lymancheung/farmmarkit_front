@@ -41,26 +41,26 @@ $(document).ready(function() {
 	}
 
 	$('.weekday').click(function(){
-		$(this).siblings('.slide-info').slideToggle();
+		$(this).siblings('.slides').slideToggle(function(){
+			var slideInfo = $(this).children('.slide-info');
+			var heightSum = 0;
+			for (var i = 0; i < 3; i++) {
+				heightSum += $(slideInfo[i]).height();
+			};
+
+			if (slideInfo.length>3) {
+				$('.slides').css("max-height",heightSum+"px");
+				$(this).css("overflow-y","scroll");
+				console.log("hey");
+			}
+		});
 	});//weekday click
 
 	$(".day:first-of-type h3, .day:first-of-type").css("border-radius","30px 30px 0 0");
 	$(".day:last-of-type h3, .day:last-of-type").addClass('non-curly').click(function(){
 		$(this).toggleClass('non-curly');
 	});
-	
-	
 
-	// (function(d, s, id) {
-	//   var js, fjs = d.getElementsByTagName(s)[0];
-	//   if (d.getElementById(id)) return;
-	//   js = d.createElement(s); js.id = id;
-	//   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-	//   fjs.parentNode.insertBefore(js, fjs);
-	// }(document, 'script', 'facebook-jssdk'))
-
-
-	// !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 });//doc ready
 
 

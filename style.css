@@ -237,10 +237,13 @@ header .title {
   transition: 0.7s all ease;
   background-color: rgba(244, 182, 88, 0.9);
 }
+.container .day .slides {
+  display: none;
+}
 .container .day .slide-info {
   margin: 5% auto;
   padding: 10px;
-  display: none;
+  display: inherit;
 }
 .container .day .slide-info .info-box {
   font-size: 3rem;

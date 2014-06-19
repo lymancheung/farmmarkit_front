@@ -78,12 +78,15 @@ header {
 			}
 		}
 
-
+		.slides{
+			display: none;
+			// max-height: 1000px;
+		}
 
 		.slide-info {
 			margin: 5% auto;
 			padding:10px;
-			display: none;
+			display: inherit;
 
 			.info-box{
 				font-size: 3rem;
